@@ -1,78 +1,55 @@
-VanCoin
+Copyright (c) 2009-2012 Bitcoin Developers
+Copyright (c) 2011-2012 CryptobugCoin Developers
+Distributed under the MIT/X11 software license, see the accompanying
+file COPYING or http://www.opensource.org/licenses/mit-license.php.
+This product includes software developed by the OpenSSL Project for use in
+the OpenSSL Toolkit (http://www.openssl.org/).  This product includes
+cryptographic software written by Eric Young (eay@cryptsoft.com) and UPnP
+software written by Thomas Bernard.
 
 
-A cryptocurrency created for learning and experimental purposes
-< based on CryptobugCoin -> BarCoin -> VanCoin>
--SCRYPT
--42 Vancoin per block
-
-TUTORIAL on how to create your own coin based on VanCoin coming soon
-
-vancoin.conf file should be put into your ~/.vancoin directory (on linux)
-if you run VanCoin/src/vancoind from terminal it will create the directory for you,
- then it will fail
-run VanCoin/src/vancoind stop 
-to be sure that it stops
-then put vancoin.conf into the ~/.vancoin directory (on linux)
-run src/vancoind or vancoin-qt again
-it should find and connect to my original node and sync with yours
+Mac OS X CryptobugCoind build instructions
+Laszlo Hanyecz <solar@heliacal.net>
+Douglas Huff <dhuff@jrbobdobbs.org>
 
 
+See readme-qt.rst for instructions on building CryptobugCoin-QT, the
+graphical user interface.
+
+Tested on 10.5, 10.6 and 10.7 intel.  PPC is not supported because it's big-endian.
+
+All of the commands should be executed in Terminal.app.. it's in
+/Applications/Utilities
+
+You need to install XCode with all the options checked so that the compiler and
+everything is available in /usr not just /Developer. XCode should be available on your OS X
+install DVD, but if not, you can get the current version from https://developer.apple.com/xcode/
 
 
-========================================================================
-BUILD:
-vancoin-qt is built for linux
-src/bitcoind also built for linux
+1.  Clone the github tree to get the source code:
 
-there are makefiles in the src folder for other systems
+git clone git@github.com:CryptobugCoin-project/CryptobugCoin.git CryptobugCoin
 
-if you want to build (again) for linux: 
-sudo make -f makefile.unix USE_UPNP=-
+2.  Download and install MacPorts from http://www.macports.org/
 
+2a. (for 10.7 Lion)
+    Edit /opt/local/etc/macports/macports.conf and uncomment "build_arch i386"
 
-========================================================================
-OPTIONAL:
-I would recommend setting up a virtual machine on your system to experiment with VanCoin
+3.  Install dependencies from MacPorts
 
-I use VirtualBox for a VM
-with Ubuntu 14.04
+sudo port install boost db48 openssl miniupnpc
 
-========================================================================
-DEPENDENCIES:
+Optionally install qrencode (and set USE_QRCODE=1):
+sudo port install qrencode
 
-once you have ubuntu installed, here are dependencies:
+4.  Now you should be able to build CryptobugCoind:
 
-sudo apt-get install build-essential libtool autotools-dev automake pkg-
-config libssl-dev libevent-dev bsdmainutils
+cd CryptobugCoin/src
+make -f makefile.osx USE_IPV6=1
 
-sudo apt-get install libboost-system-dev libboost-filesystem-dev libboost-
-chrono-dev libboost-program-options-dev libboost-test-dev libboost-
-thread-dev
-
-sudo apt-get install libboost-all-dev
-
-sudo apt-get update
-
-sudo apt-get install libdb4.8-dev libdb4.8++-dev
-
-apt-get install libqt5gui5 libqt5core5a libqt5dbus5 qttools5-dev
-qttools5-dev-tools libprotobuf-dev protobuf-compiler
-
-sudo apt-get install git
-
-sudo apt-get update
-========================================================================
-
-
-OPTIONAL 
-========================================================================
-DESKTOP:
-sudo apt-get install --no-install-recommends lubuntu-desktop
-on your VM go to 'Devices' -> 'Insert Guest Additions CD image'
-ssh to your VM, run 
-sudo /media/<user name>/VboxLinuxAdditions.run
-<user name> is the account your created on the VM
-
-there will me more on it in the upcoming tutorial
-========================================================================
+Run:
+  ./CryptobugCoind --help  # for a list of command-line options.
+Run
+  ./CryptobugCoind -daemon # to start the CryptobugCoin daemon.
+Run
+  ./CryptobugCoind help # When the daemon is running, to get a list of RPC commands
