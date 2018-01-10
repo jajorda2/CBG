@@ -29,7 +29,7 @@ CTxMemPool mempool;
 unsigned int nTransactionsUpdated = 0;
 
 map<uint256, CBlockIndex*> mapBlockIndex;
-uint256 hashGenesisBlock("0d3d48ccf19ff662df9cf1b9660831808d01bde8708330feffd3646238d9b58f");
+uint256 hashGenesisBlock("0x");
 static CBigNum bnProofOfWorkLimit(~uint256(0) >> 20); // starting difficulty is 1 / 2^12
 CBlockIndex* pindexGenesisBlock = NULL;
 int nBestHeight = -1;
@@ -2002,7 +2002,7 @@ bool LoadBlockIndex(bool fAllowNew)
     
         
         // Genesis block
-        const char* pszTimestamp = "Vancouver Sun Dec 31st 2015: A reminer of the Big One's potential";
+        const char* pszTimestamp = "CNN 10 January 2018 The government shutting down over DACA is a real possibility";
         CTransaction txNew;
         txNew.vin.resize(1);
         txNew.vout.resize(1);
@@ -2014,13 +2014,13 @@ bool LoadBlockIndex(bool fAllowNew)
         block.hashPrevBlock = 0;
         block.hashMerkleRoot = block.BuildMerkleTree();
         block.nVersion = 1;
-        block.nTime    = 1451868888; //epochtime
+        block.nTime    = 1515597979; //epochtime
         block.nBits    = 0x1e0ffff0;
         block.nNonce   = 474054;
 
         if (fTestNet)
         {
-            block.nTime    = 1451693411;
+            block.nTime    = 1515597979;
             block.nNonce   = 5017018;
         }
 
@@ -2028,7 +2028,7 @@ bool LoadBlockIndex(bool fAllowNew)
         printf("%s\n", block.GetHash().ToString().c_str());
         printf("%s\n", hashGenesisBlock.ToString().c_str());
         printf("%s\n", block.hashMerkleRoot.ToString().c_str());
-        assert(block.hashMerkleRoot == uint256("323b8fd9cbc8fd9c7e76742333f715de89190dc2bc5b58124d8ceed8466face8"));
+        assert(block.hashMerkleRoot == uint256("0x"));
 
         // If genesis block hash does not match, then generate new genesis hash.
         if (false && block.GetHash() != hashGenesisBlock)

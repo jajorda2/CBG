@@ -2049,7 +2049,7 @@ Cím: %4
     </message>
     <message>
         <location filename="../bitcoinstrings.cpp" line="63"/>
-        <source>Listen for connections on &lt;port&gt; (default: 8333 or testnet: 18333)</source>
+        <source>Listen for connections on &lt;port&gt; (default: 33399 or testnet: 133399)</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -2165,8 +2165,8 @@ Cím: %4
     </message>
     <message>
         <location filename="../bitcoinstrings.cpp" line="95"/>
-        <source>Listen for JSON-RPC connections on &lt;port&gt; (default: 8332)</source>
-        <translation>JSON-RPC csatlakozásokhoz figyelendő &lt;port&gt; (alapértelmezett: 8332)
+        <source>Listen for JSON-RPC connections on &lt;port&gt; (default: 33398)</source>
+        <translation>JSON-RPC csatlakozásokhoz figyelendő &lt;port&gt; (alapértelmezett: 33398)
 </translation>
     </message>
     <message>
