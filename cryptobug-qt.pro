@@ -58,6 +58,11 @@ contains(USE_DBUS, 1) {
     QT += dbus
 }
 
+
+QT += widgets
+
+
+
 # use: qmake "FIRST_CLASS_MESSAGING=1"
 contains(FIRST_CLASS_MESSAGING, 1) {
     message(Building with first-class messaging)
