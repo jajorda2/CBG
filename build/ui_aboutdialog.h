@@ -123,7 +123,7 @@ public:
         label->setText(QApplication::translate("AboutDialog", "<b>vancoin</b> version", 0, QApplication::UnicodeUTF8));
         label_2->setText(QApplication::translate("AboutDialog", "\n"
 "          Copyright \302\251 2009-2012 Bitcoin Developers\n"
-"          Copyright \302\251 2011-2012 Litecoin Developers\n"
+"          Copyright \302\251 2011-2012 CryptobugCoin Developers\n"
 "          Copyright \302\251 2013-2014 shakezula \n"
 "\n"
 "          This is experimental software. \n"

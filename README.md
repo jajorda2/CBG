@@ -2,7 +2,7 @@ VanCoin
 
 
 A cryptocurrency created for learning and experimental purposes
-< based on Litecoin -> BarCoin -> VanCoin>
+< based on CryptobugCoin -> BarCoin -> VanCoin>
 -SCRYPT
 -42 Vancoin per block
 
